@@ -1,0 +1,8 @@
+here are the functions that i have occured.
+
+while doing mnist-softmax-regression
+.run:for operation
+.eval:for tensor
+numpy.arange:create an array with specific dimension
+(array).flat:sample at the specific point
+numpy.random.shuffle:random the order of the array
