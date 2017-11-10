@@ -1,1 +1,3 @@
-english is ok?
+the way to see the source code
+in Spyder console window ,first import tensorflow as tf then help£¨tf.nn.softmax£©and you get the location
+D:\Anaconda3\envs\tensorflow\Lib\site-packages\tensorflow\python\ops
