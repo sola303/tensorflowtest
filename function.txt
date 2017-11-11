@@ -6,3 +6,31 @@ while doing mnist-softmax-regression
 numpy.arange:create an array with specific dimension
 (array).flat:sample at the specific point
 numpy.random.shuffle:random the order of the array
+
+truncated_normal(shape, mean=0.0, stddev=1.0, dtype=tf.float32, seed=None, name=None)
+    Outputs random values from a truncated normal distribution.truncated means if |random values-mean|>2*stddev,sample again.
+ 
+tensor = tf.constant(-1.0, shape=[2, 3]) => [[-1. -1. -1.]
+                                             [-1. -1. -1.]]
+
+conv2d(input, filter, strides, padding, use_cudnn_on_gpu=True, data_format='NHWC', name=None)
+input:shape [batch height width depth]
+filter:shape [height width depth filternumber]
+strides:shape [1 x x 1] every time the filter moves x
+padding:
+if VALID,the output is height=width=(input height-filter height)/x +1 size:[batch height width depth=filternumber]
+if SAME,by using padding,the output is the same as the input,size:[batch inputheight inputwidth depth=filternumber]
+?For the SAME padding, the output height and width are computed as:
+out_height = ceil(float(in_height) / float(strides[1]))
+?For the VALID padding, the output height and width are computed as:
+out_height = ceil(float(in_height - filter_height + 1) / float(strides[1]))
+
+
+max_pool(value, ksize, strides, padding, data_format='NHWC', name=None)
+    Performs the max pooling on the input.
+value:the input,usually the output of the convolution layer,size:[batch height width depth]
+ksize:the size of the pooling filter,for example a 2X2 pooling filter is [1 2 2 1]
+strides:while pooling,usually no overlap.for 2X2 pooling stride is [1 2 2 1]
+padding:
+Valid:drop the right-most or the bottom-most
+Same:add the padding column with -inf,after max_pool no effect.
