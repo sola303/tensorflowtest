@@ -1,3 +1,9 @@
 the way to see the source code
 in Spyder console window ,first import tensorflow as tf then help£¨tf.nn.softmax£©and you get the location
 D:\Anaconda3\envs\tensorflow\Lib\site-packages\tensorflow\python\ops
+
+the way to print the concrete value of a tensor
+sess = tf.Session() 
+print(sess.run(tf.range(0,20,1)))
+
+while opening tensorboard,remerber cd dir=(...befor where the event file is)
